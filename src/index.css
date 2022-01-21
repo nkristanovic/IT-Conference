@@ -1,0 +1,14 @@
+@font-face {
+    font-family: 'Everett';
+    src: local('Everett'), url(./assets/fonts/Nolan\ Paparelli\ -\ Everett\ Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Haas Grot Disp';
+    src: local('Haas Grot Disp'), url(./assets/fonts/NHaasGroteskTXPro-55Rg.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'Haas Grot Disp Medium';
+    src: local('Haas Grot Disp'), url(./assets/fonts/NeueHaasGrotDisp-65Medium.otf) format('opentype');
+}
