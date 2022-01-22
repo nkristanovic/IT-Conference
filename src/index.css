@@ -12,3 +12,8 @@
     font-family: 'Haas Grot Disp Medium';
     src: local('Haas Grot Disp'), url(./assets/fonts/NeueHaasGrotDisp-65Medium.otf) format('opentype');
 }
+
+@font-face {
+    font-family: 'Haas Grot Disp Thin';
+    src: local('Haas Grot Disp'), url(./assets/fonts/NeueHaasGrotDisp-35Thin.otf) format('opentype');
+}

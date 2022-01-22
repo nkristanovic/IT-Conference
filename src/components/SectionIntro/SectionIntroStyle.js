@@ -4,19 +4,19 @@ import { colors, breakpoints } from '../../lib/style/theme';
 
 export const SectionIntro = styled.div`
     background-color: ${colors.black};  
-    color: ${colors.white}; 
+    color: ${colors.white};
+    margin: 0 auto; 
+    max-width: 360px;
     @media  screen and (${breakpoints.desktop}) {
         max-width: 1440px;
-        margin: 0 auto;
     }
 `;
 
 export const HorizontalLine = styled.div` 
     background-color: ${colors.white};
     height: 4px;
-    margin: 10px 20px 0;
+    margin: 20px;
     @media  screen and (${breakpoints.desktop}) {
-        max-width: 1440px;
         height: 3.2px;
         margin: 10px 60px 0;
     }
@@ -40,10 +40,9 @@ export const Title = styled.p`
 export const Description = styled.p`
     font-family: 'Everett';
     margin-top: 60px;
-    width: 320px;
     font-size: 24px;
     line-height: 32px; 
-    padding-left: 20px;
+    padding: 0 20px;
     @media  screen and (${breakpoints.desktop}) {
         margin-top: 48.06px;
         width: 1290px;
@@ -67,7 +66,6 @@ export const Content = styled.div`
 
 export const Item = styled.div`
     width: 280px;
-    height: 344px;
     border: 0.8px solid ${colors.gray};
     @media  screen and (${breakpoints.desktop}) {
         width: 360px;
@@ -111,4 +109,3 @@ export const ItemText = styled.p`
         padding: 22.6px 76px 38.4px 60px;
     }
 `;
-

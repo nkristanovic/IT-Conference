@@ -2,77 +2,63 @@ import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '../../lib/style/theme';
 
-export const SectionHighlights = styled.div`
+export const SectionWorkshops = styled.div`
     color: ${colors.white};
     margin: 0 auto;
     max-width: 360px;
     padding-left: 20px;
+    position: relative;
     @media  screen and (${breakpoints.desktop}) {
         max-width: 1440px;
         padding: 0 60px;
     }
 `;
 
-export const SectionHeader = styled.div`
-    margin-top: 80px;
+export const BackgroundImageWrapper = styled.div`
+`;
+
+export const BackgroundImage1 = styled.img`
+    display: none;
     @media  screen and (${breakpoints.desktop}) {
-        margin-top: 208px;
-        display: flex;
-        justify-content: space-between;
+        display: block;
+        position: absolute;
+        top: 600px;
+        left: 163.2px;
     }
 `;
 
-export const Title = styled.h2`
-    font-family: 'Everett';
-    font-weight: normal;
-    font-size: 45px;
-    line-height: 52px;
+export const BackgroundImage2 = styled.img`
+    display: none;
     @media  screen and (${breakpoints.desktop}) {
-        font-size: 50px;
-        line-height: 54px;
-        letter-spacing: -0.035em;
-        width: 352.8px;
+        display: block;
+        position: absolute;
+        top: 960px;
+        left: 404.8px;
     }
 `;
 
-export const ButtonWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    height: 41.6px;
-    margin-top: 16px;
-`;
-
-export const Text = styled.p`
-    font-family: 'Haas Grot Disp';
-    font-size: 20px;
-    line-height: 28px;
-    margin-right: 16px;
+export const BackgroundImage3 = styled.img`
+    display: none;
     @media  screen and (${breakpoints.desktop}) {
-        font-size: 19px;
-        line-height: 22px;
-        margin-right: 40.3px;
+        display: block;
+        position: absolute;
+        top: 800px;
+        right: 114.4px;
     }
 `;
 
-export const Arrow = styled.div`
-    background: ${colors.orange};
-    color: ${colors.black};
-    position: relative;
-    width: 37px;
-    height: 36px;
-    border-radius: 28px;
+export const BackgroundImage4 = styled.img`
+    position: absolute;
+    right: 30px;
+    top: 790px;
     @media  screen and (${breakpoints.desktop}) {
-        width: 42.4px;
-        height: 41.6px;
-        border-radius: 22.4px;
+        display: none;
     }
 `;
 
 export const Content = styled.div`
-    margin-top: 64px;
     @media  screen and (${breakpoints.desktop}) {
         display: flex;
-        margin-top: 96px;
     }
 `;
 
@@ -83,12 +69,13 @@ export const LeftWrapper = styled.div`
 export const InfoNumber = styled.p`
     font-size: 132px;
     line-height: 132px;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.015em;
     @media  screen and (${breakpoints.desktop}) {
         font-size: 130px;
         line-height: 122px;
-        letter-spacing: -0.055em;
+        letter-spacing: -0.065em;
         margin-right: 218.4px;
+        width: 128px;
     }
 `;
 
@@ -99,6 +86,7 @@ export const InfoText = styled.p`
         font-size: 36px;
         line-height: 42px;
         margin-top: 20.2px;
+        letter-spacing: -0.035em;
     }
 `;
 
@@ -136,9 +124,9 @@ export const ImageWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
-    font-family: 'Haas Grot Disp';
     margin-top: 20px;
     overflow: auto;
+    font-family: 'Haas Grot Disp';
     @media  screen and (${breakpoints.desktop}) {
         grid-gap: 30px;
         overflow: hidden;
@@ -157,27 +145,82 @@ export const Image = styled.img`
     }
 `;
 
-export const Name = styled.p`
+export const Description = styled.p`
     font-size: 20px;
     line-height: 28px;
     margin-top: 20px;
     @media  screen and (${breakpoints.desktop}) {
         font-size: 25px;
         line-height: 29px;
-        margin-top: 24.6px;
+        margin-top: 23.2px;
     }
 `;
 
-export const Description = styled.p`
+export const Name = styled.p`
     font-size: 16px;
     line-height: 24px;
     opacity: 0.7;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
     @media  screen and (${breakpoints.desktop}) {
         font-size: 13px;
         line-height: 19px;
         margin-top: 3.2px;
-        margin-bottom: 191.4px;
+        margin-bottom: 191.2px;
+    }
+`;
+
+export const SectionFooter = styled.div`
+    @media  screen and (${breakpoints.desktop}) {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 191.6px;
+    }
+`;
+
+export const WorkshopsInfo = styled.p`
+    font-size: 21px;
+    line-height: 32px;
+    opacity: 0.8;
+    width: 320px;
+    @media  screen and (${breakpoints.desktop}) {
+        font-size: 23px;
+        line-height: 32px;
+        width: 530px;
+        margin-left: 346px;
+    }
+`;
+
+export const ButtonWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    height: 41.6px;
+    margin-top: 16px;
+    margin-bottom: 104px;
+`;
+
+export const Text = styled.p`
+    font-family: 'Haas Grot Disp';
+    font-size: 20px;
+    line-height: 28px;
+    margin-right: 16px;
+    @media  screen and (${breakpoints.desktop}) {
+        font-size: 19px;
+        line-height: 22px;
+        margin-right: 40.3px;
+    }
+`;
+
+export const Arrow = styled.div`
+    background: ${colors.orange};
+    color: ${colors.black};
+    position: relative;
+    width: 37px;
+    height: 36px;
+    border-radius: 28px;
+    @media  screen and (${breakpoints.desktop}) {
+        width: 42.4px;
+        height: 41.6px;
+        border-radius: 22.4px;
     }
 `;
 
