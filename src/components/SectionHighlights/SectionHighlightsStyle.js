@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 import { colors, breakpoints } from '../../lib/style/theme';
 
 export const SectionHighlights = styled.div`
@@ -132,7 +132,7 @@ export const RightArrow = styled.div`
     }
 `;
 
-export const ImageWrapper = styled.div`
+export const CardWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
@@ -147,10 +147,19 @@ export const ImageWrapper = styled.div`
 
 export const Figure = styled.figure``;
 
+export const ImageWrapper = styled(animated.div)`
+    background-color: ${colors.blue};
+    height: 314px;
+    @media  screen and (${breakpoints.desktop}) {
+        height: 463px;
+    }
+`;
+
 export const Image = styled.img`
     width: 264px;
     height: 314px;
     object-fit: cover;
+    opacity: 0.6;
     @media  screen and (${breakpoints.desktop}) {
         width: 300px;
         height: 463px;

@@ -1,6 +1,7 @@
 import './App.scss';
 import SectionIntro from './components/SectionIntro/SectionIntro';
-import { introSectionMock } from './lib/mock/section';
+import SectionHighlights from './components/SectionHighlights/SectionHighlights';
+import { highlightsMock, introSectionMock } from './lib/mock/section';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
           description={section.description}
         />
       ))}
+      <SectionHighlights />
     </>
   );
 }
