@@ -101,7 +101,7 @@ export const Item = styled.div`
         display: block;
     }
     &:hover {
-        background: ${colors.lightGray};
+        background: ${colors.gray};
     }
     @media  screen and (${breakpoints.desktop}) {
         width: 360px;

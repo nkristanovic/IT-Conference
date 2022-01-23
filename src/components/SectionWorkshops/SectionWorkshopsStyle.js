@@ -120,55 +120,6 @@ export const RightArrow = styled.div`
     }
 `;
 
-export const ImageWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
-    margin-top: 20px;
-    overflow: auto;
-    font-family: 'Haas Grot Disp';
-    @media  screen and (${breakpoints.desktop}) {
-        grid-gap: 30px;
-        overflow: hidden;
-    }
-`;
-
-export const Figure = styled.figure``;
-
-export const Image = styled.img`
-    width: 264px;
-    height: 314px;
-    object-fit: cover;
-    @media  screen and (${breakpoints.desktop}) {
-        width: 300px;
-        height: 463px;
-    }
-`;
-
-export const Description = styled.p`
-    font-size: 20px;
-    line-height: 28px;
-    margin-top: 20px;
-    @media  screen and (${breakpoints.desktop}) {
-        font-size: 25px;
-        line-height: 29px;
-        margin-top: 23.2px;
-    }
-`;
-
-export const Name = styled.p`
-    font-size: 16px;
-    line-height: 24px;
-    opacity: 0.7;
-    margin-bottom: 80px;
-    @media  screen and (${breakpoints.desktop}) {
-        font-size: 13px;
-        line-height: 19px;
-        margin-top: 3.2px;
-        margin-bottom: 191.2px;
-    }
-`;
-
 export const SectionFooter = styled.div`
     @media  screen and (${breakpoints.desktop}) {
         display: flex;

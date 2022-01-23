@@ -4,22 +4,17 @@ import { animated } from 'react-spring';
 import { colors, breakpoints } from '../../lib/style/theme';
 
 export const CardWrapper = styled.div`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 16px;
     font-family: 'Haas Grot Disp';
     margin-top: 20px;
-    overflow: auto;
-    @media  screen and (${breakpoints.desktop}) {
-        grid-gap: 30px;
-        overflow: hidden;
-    }
 `;
 
 export const Figure = styled.figure``;
 
 export const ImageWrapper = styled(animated.div)`
-    background-color: ${colors.blue};
+    ${(props) => props.background === 'blue' &&
+        `background-color: ${colors.blue};`}
+    ${(props) => props.background === 'red' &&
+        `background-color: ${colors.red};`}
     height: 314px;
     @media  screen and (${breakpoints.desktop}) {
         height: 463px;

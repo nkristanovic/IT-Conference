@@ -1,6 +1,9 @@
 import image1 from '../../assets/images/image 1.png';
 import image2 from '../../assets/images/image 2.png';
 import image3 from '../../assets/images/image 3.png';
+import image4 from '../../assets/images/image 4.png';
+import image5 from '../../assets/images/image 5.png';
+import image6 from '../../assets/images/image 6.png';
 
 export const introSectionMock = [
     {
@@ -68,5 +71,39 @@ export const highlightsMock = [
         altUrl: 'image 2',
         name: 'Kene Udeze',
         description: 'UX Designer at Booking.com'
+    }
+];
+
+export const workshopsSectionMock = [
+    {
+        id: 1,
+        infoNumber: 12,
+        infoText: 'Workshops',
+        workshopsInfo: 'Famous frontend architects and design specialists from all over the world gathered at the same place bringing you the hottest talks and holding workshops regarding the latest trends, revealing the hottest tips and tricks.',
+        text: 'View schedule'
+    }
+];
+
+export const workshopsMock = [
+    {
+        id: 1,
+        imgUrl: image4,
+        altUrl: 'image 4',
+        description: 'CSS Performance',
+        name: 'Held by Harry Roberts'
+    },
+    {
+        id: 2,
+        imgUrl: image5,
+        altUrl: 'image 5',
+        description: 'Design Process',
+        name: 'Held by Elena Crković'
+    },
+    {
+        id: 3,
+        imgUrl: image6,
+        altUrl: 'image 6',
+        description: 'React Native in Practice',
+        name: 'Held by Ricardo Čerljenko'
     }
 ];

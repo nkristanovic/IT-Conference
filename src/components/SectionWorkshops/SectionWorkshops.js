@@ -1,8 +1,5 @@
 import React from 'react';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
-import image4 from '../../assets/images/image 4.png';
-import image5 from '../../assets/images/image 5.png';
-import image6 from '../../assets/images/image 6.png';
 import image16 from '../../assets/images/image 16.png';
 import image17 from '../../assets/images/image 17.png';
 import image18 from '../../assets/images/image 18.png';
@@ -14,27 +11,27 @@ import {
     Text,
     Content,
     Arrow,
-    Figure,
-    Image,
     ButtonWrapper,
     LeftWrapper,
     InfoNumber,
     InfoText,
-    ImageWrapper,
     ArrowWrapper,
     LeftArrow,
     RightArrow,
-    Name,
-    Description,
     BackgroundImageWrapper,
     BackgroundImage1,
     BackgroundImage2,
     BackgroundImage3,
     BackgroundImage4
 } from './SectionWorkshopsStyle';
-
+import { workshopsMock } from '../../lib/mock/section';
+import ImageCards from '../ImageCards/ImageCards';
+import { Grid } from '../Grid/Grid';
 const SectionWorkshops = ({
-
+    infoNumber,
+    infoText,
+    info,
+    text
 }) => {
     return (
         <>
@@ -47,8 +44,8 @@ const SectionWorkshops = ({
                 </BackgroundImageWrapper>
                 <Content>
                     <LeftWrapper>
-                        <InfoNumber>12</InfoNumber>
-                        <InfoText>Workshops</InfoText>
+                        <InfoNumber>{infoNumber}</InfoNumber>
+                        <InfoText>{infoText}</InfoText>
                         <ArrowWrapper>
                             <LeftArrow>
                                 <BsArrowLeft
@@ -72,28 +69,23 @@ const SectionWorkshops = ({
                             </RightArrow>
                         </ArrowWrapper>
                     </LeftWrapper>
-                    <ImageWrapper>
-                        <Figure>
-                            <Image src={image4} alt='image 4' />
-                            <Description>CSS Performance</Description>
-                            <Name>Held by Harry Roberts</Name>
-                        </Figure>
-                        <Figure>
-                            <Image src={image5} alt='image 5' />
-                            <Description>Design Process</Description>
-                            <Name>Held by Elena Crković</Name>
-                        </Figure>
-                        <Figure>
-                            <Image src={image6} alt='image 6' />
-                            <Description>React Native in Practice</Description>
-                            <Name>Held by Ricardo Čerljenko</Name>
-                        </Figure>
-                    </ImageWrapper>
+                    <Grid>
+                        {workshopsMock.map(workshops => (
+                            <ImageCards
+                                key={workshops.id}
+                                imageUrl={workshops.imgUrl}
+                                imageAlt={workshops.imgAlt}
+                                description={workshops.name}
+                                name={workshops.description}
+                                background="red"
+                            />
+                        ))}
+                    </Grid>
                 </Content>
                 <SectionFooter>
-                    <WorkshopsInfo>Famous frontend architects and design specialists from all over the world gathered at the same place bringing you the hottest talks and holding workshops regarding the latest trends, revealing the hottest tips and tricks.</WorkshopsInfo>
+                    <WorkshopsInfo>{info}</WorkshopsInfo>
                     <ButtonWrapper>
-                        <Text>View schedule</Text>
+                        <Text>{text}</Text>
                         <Arrow>
                             <BsArrowRight
                                 style={{

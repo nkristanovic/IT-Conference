@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import { highlightsMock } from '../../lib/mock/section';
+import { Grid } from '../Grid/Grid';
 import ImageCards from '../ImageCards/ImageCards';
 import {
     SectionHighlights as SectionHighlightsWrapper,
@@ -70,15 +71,18 @@ const SectionHighlights = ({
                             </RightArrow>
                         </ArrowWrapper>
                     </LeftWrapper>
-                    {highlightsMock.map(highlights => (
-                        <ImageCards
-                            key={highlights.id}
-                            imageUrl={highlights.imgUrl}
-                            imageAlt={highlights.imgAlt}
-                            name={highlights.name}
-                            description={highlights.description}
-                        />
-                    ))}
+                    <Grid>
+                        {highlightsMock.map(highlights => (
+                            <ImageCards
+                                key={highlights.id}
+                                imageUrl={highlights.imgUrl}
+                                imageAlt={highlights.imgAlt}
+                                name={highlights.name}
+                                description={highlights.description}
+                                background="blue"
+                            />
+                        ))}
+                    </Grid>
                 </Content>
             </SectionHighlightsWrapper>
         </>

@@ -17,13 +17,14 @@ const ImageCards = ({
     imageUrl,
     imageAlt,
     name,
-    description
+    description,
+    background
 }) => {
     const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 20, tension: 200, friction: 50 } }));
     return (
         <CardWrapper>
             <Figure>
-                <ImageWrapper onMouseMove={({ clientX: x, clientY: y }) => (set({ xys: calc(x, y) }))}
+                <ImageWrapper background={background} onMouseMove={({ clientX: x, clientY: y }) => (set({ xys: calc(x, y) }))}
                     onMouseLeave={() => set({ xys: [0, 0, 1] })}
                     style={{
                         transform: props.xys.to(trans)
