@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import { colors, breakpoints } from '../../lib/style/theme';
 
@@ -64,12 +63,54 @@ export const Content = styled.div`
     }
 `;
 
+export const ItemSubtitle = styled.h2`
+    font-size: 24px;
+    line-height: 28px;
+    padding: 164px 98px 40px 20px;
+    width: 162px;
+    &:last-child{
+        width: 500px;
+    }
+    @media  screen and (${breakpoints.desktop}) {
+        font-size: 25px;
+        line-height: 29px;
+        padding: 102.4px 134.4px 44.8px 60px; 
+    }
+`;
+
+export const ItemText = styled.p`
+        display:none;
+        font-size: 14px;
+        line-height: 24px;
+        padding: 12px 60px 40px 20px;
+    @media  screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+        line-height: 22px;
+        padding: 22.6px 76px 38.4px 60px;
+    }
+`;
+
 export const Item = styled.div`
     width: 280px;
     border: 0.8px solid ${colors.gray};
+    &:hover ${ItemSubtitle} {
+        padding: 100px 98px 0 20px;
+    }
+    &:hover ${ItemText} {
+        display: block;
+    }
+    &:hover {
+        background: ${colors.lightGray};
+    }
     @media  screen and (${breakpoints.desktop}) {
         width: 360px;
         height: 336px;
+        &:hover ${ItemSubtitle} {
+            padding: 37.4px 134.4px 0px 60px;
+        }
+        &:hover {
+            background: ${colors.gray};
+        }
     }
 `;
 
@@ -81,31 +122,5 @@ export const ItemTitle = styled.h1`
         font-size: 100px;
         line-height: 106px;
         padding: 29.6px 134.4px 0 60px;
-    }
-`;
-
-export const ItemSubtitle = styled.h2`
-    font-size: 24px;
-    line-height: 28px;
-    padding: 100px 98px 0 20px;
-    width: 162px;
-    @media  screen and (${breakpoints.desktop}) {
-        font-size: 25px;
-        line-height: 29px;
-        padding: 37.4px 134.4pc 0px 60px;
-        &:nth-child(4) {
-            width: 300px;
-        }
-    }
-`;
-
-export const ItemText = styled.p`
-        font-size: 14px;
-        line-height: 24px;
-        padding: 12px 60px 40px 20px;
-    @media  screen and (${breakpoints.desktop}) {
-        font-size: 16px;
-        line-height: 22px;
-        padding: 22.6px 76px 38.4px 60px;
     }
 `;
