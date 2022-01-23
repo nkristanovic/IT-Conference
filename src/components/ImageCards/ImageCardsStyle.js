@@ -6,6 +6,10 @@ import { colors, breakpoints } from '../../lib/style/theme';
 export const CardWrapper = styled.div`
     font-family: 'Haas Grot Disp';
     margin-top: 20px;
+    margin-left: -10px;
+    @media  screen and (${breakpoints.desktop}) {
+        margin-left: 20px;
+    }
 `;
 
 export const Figure = styled.figure``;
@@ -16,8 +20,10 @@ export const ImageWrapper = styled(animated.div)`
     ${(props) => props.background === 'red' &&
         `background-color: ${colors.red};`}
     height: 314px;
+    width: 264px;
     @media  screen and (${breakpoints.desktop}) {
         height: 463px;
+        width: 300px;
     }
 `;
 

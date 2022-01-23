@@ -88,7 +88,7 @@ export const InfoNumber = styled.p`
         font-size: 130px;
         line-height: 122px;
         letter-spacing: -0.055em;
-        margin-right: 218.4px;
+        margin-right: 235px;
     }
 `;
 
@@ -104,10 +104,14 @@ export const InfoText = styled.p`
 
 export const ArrowWrapper = styled.div`
     display: none;
+    position: absolute;
+    text-align: center;
+    max-width: 1440px;
     @media  screen and (${breakpoints.desktop}) {
         display: block;
         display: flex;
-        margin-top: 255.8px;
+        top: 1750px;
+        left: 130px;
     }
 `;
 
@@ -119,6 +123,9 @@ export const LeftArrow = styled.div`
         height: 41.6px;
         border-radius: 22.4px;
         margin-right: 15px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 `;
 
@@ -129,6 +136,13 @@ export const RightArrow = styled.div`
         width: 42.4px;
         height: 41.6px;
         border-radius: 22.4px;
+        &:hover {
+            cursor: pointer;
+        }
     }
+`;
+
+export const CarouselWrapper = styled.div`
+        width: 960px;
 `;
 

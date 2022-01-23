@@ -1,0 +1,16 @@
+.react-multi-carousel-item{
+    width: 275px !important;
+}
+
+.react-multi-carousel-item:first-child {
+    margin-left: 5px !important;
+}
+@media only screen and (min-width: 1440px) {
+    .react-multi-carousel-item{
+        width: 318px !important;
+    }
+}
+
+.Container {
+    
+}

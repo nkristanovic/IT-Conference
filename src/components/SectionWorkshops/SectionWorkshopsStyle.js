@@ -145,7 +145,7 @@ export const ButtonWrapper = styled.div`
     display: flex;
     align-items: center;
     height: 41.6px;
-    margin-top: 16px;
+    margin-top: 24px;
     margin-bottom: 104px;
 `;
 

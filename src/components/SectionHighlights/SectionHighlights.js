@@ -17,14 +17,59 @@ import {
     ArrowWrapper,
     LeftArrow,
     RightArrow,
+    CarouselWrapper
 } from './SectionHighlightsStyle';
-
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import './carousel.css';
 const SectionHighlights = ({
     title,
     text,
     infoNumber,
     infoText,
+    onClick
 }) => {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1440 },
+            items: 3,
+            slidesToSlide: 1
+        },
+        mobile: {
+            breakpoint: { max: 1440, min: 0 },
+            items: 1,
+            slidesToSlide: 1
+        },
+    };
+
+    const ButtonGroup = ({ next, previous }) => {
+        return (
+            <ArrowWrapper>
+                <LeftArrow onClick={() => previous()}>
+                    <BsArrowLeft
+                        style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%,-50%)'
+                        }}
+                    />
+
+                </LeftArrow>
+                <RightArrow onClick={() => next()}>
+                    <BsArrowRight
+                        style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%,-50%)'
+                        }}
+                    />
+                </RightArrow>
+            </ArrowWrapper >
+        );
+    };
+
     return (
         <>
             <SectionHighlightsWrapper>
@@ -48,40 +93,34 @@ const SectionHighlights = ({
                     <LeftWrapper>
                         <InfoNumber>{infoNumber}</InfoNumber>
                         <InfoText>{infoText}</InfoText>
-                        <ArrowWrapper>
-                            <LeftArrow>
-                                <BsArrowLeft
-                                    style={{
-                                        position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%,-50%)'
-                                    }}
-                                />
-                            </LeftArrow>
-                            <RightArrow>
-                                <BsArrowRight
-                                    style={{
-                                        position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%,-50%)'
-                                    }}
-                                />
-                            </RightArrow>
-                        </ArrowWrapper>
                     </LeftWrapper>
                     <Grid>
-                        {highlightsMock.map(highlights => (
-                            <ImageCards
-                                key={highlights.id}
-                                imageUrl={highlights.imgUrl}
-                                imageAlt={highlights.imgAlt}
-                                name={highlights.name}
-                                description={highlights.description}
-                                background="blue"
-                            />
-                        ))}
+                        <CarouselWrapper>
+                            <Carousel
+                                className={'Container'}
+                                arrows={false}
+                                infinite={true}
+                                responsive={responsive}
+                                renderButtonGroupOutside={true}
+                                customButtonGroup={<ButtonGroup />}
+
+                            // customRightArrow={<CustomRight />}
+                            // customLeftArrow={<CustomLeft />}
+                            >
+                                {
+                                    highlightsMock.map(highlights => (
+                                        <ImageCards
+                                            key={highlights.id}
+                                            imageUrl={highlights.imgUrl}
+                                            imageAlt={highlights.imgAlt}
+                                            name={highlights.name}
+                                            description={highlights.description}
+                                            background="blue"
+                                        />
+                                    ))
+                                }
+                            </Carousel>
+                        </CarouselWrapper>
                     </Grid>
                 </Content>
             </SectionHighlightsWrapper>

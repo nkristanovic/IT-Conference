@@ -71,6 +71,27 @@ export const highlightsMock = [
         altUrl: 'image 2',
         name: 'Kene Udeze',
         description: 'UX Designer at Booking.com'
+    },
+    {
+        id: 4,
+        imgUrl: image3,
+        altUrl: 'image 3',
+        name: 'Merlin Rebrović',
+        description: 'UX Design at Google'
+    },
+    {
+        id: 5,
+        imgUrl: image1,
+        altUrl: 'image 1',
+        name: 'Magdalena Magličić',
+        description: 'Web and mobile developer at FIVE'
+    },
+    {
+        id: 6,
+        imgUrl: image2,
+        altUrl: 'image 2',
+        name: 'Kene Udeze',
+        description: 'UX Designer at Booking.com'
     }
 ];
 
