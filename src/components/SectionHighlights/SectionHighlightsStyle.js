@@ -7,6 +7,7 @@ export const SectionHighlights = styled.div`
     margin: 0 auto;
     max-width: 360px;
     padding-left: 20px;
+    position: relative;
     @media  screen and (${breakpoints.desktop}) {
         max-width: 1440px;
         padding: 0 60px;
@@ -110,8 +111,8 @@ export const ArrowWrapper = styled.div`
     @media  screen and (${breakpoints.desktop}) {
         display: block;
         display: flex;
-        top: 1750px;
-        left: 130px;
+        top: 850px;
+        left: 60px;
     }
 `;
 

@@ -27,7 +27,6 @@ const SectionHighlights = ({
     text,
     infoNumber,
     infoText,
-    onClick
 }) => {
     const responsive = {
         desktop: {
@@ -67,7 +66,7 @@ const SectionHighlights = ({
                     />
                 </RightArrow>
             </ArrowWrapper >
-        );
+        )
     };
 
     return (
@@ -97,15 +96,11 @@ const SectionHighlights = ({
                     <Grid>
                         <CarouselWrapper>
                             <Carousel
-                                className={'Container'}
                                 arrows={false}
                                 infinite={true}
                                 responsive={responsive}
                                 renderButtonGroupOutside={true}
                                 customButtonGroup={<ButtonGroup />}
-
-                            // customRightArrow={<CustomRight />}
-                            // customLeftArrow={<CustomLeft />}
                             >
                                 {
                                     highlightsMock.map(highlights => (

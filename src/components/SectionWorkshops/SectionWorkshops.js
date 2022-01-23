@@ -22,17 +22,61 @@ import {
     BackgroundImage1,
     BackgroundImage2,
     BackgroundImage3,
-    BackgroundImage4
+    BackgroundImage4,
+    CarouselWrapper
 } from './SectionWorkshopsStyle';
 import { workshopsMock } from '../../lib/mock/section';
+import Carousel from 'react-multi-carousel';
 import ImageCards from '../ImageCards/ImageCards';
 import { Grid } from '../Grid/Grid';
+import 'react-multi-carousel/lib/styles.css';
+import './../SectionHighlights/carousel.css';
 const SectionWorkshops = ({
     infoNumber,
     infoText,
     info,
     text
 }) => {
+    const responsive = {
+        desktop: {
+            breakpoint: { max: 3000, min: 1440 },
+            items: 3,
+            slidesToSlide: 3
+        },
+        mobile: {
+            breakpoint: { max: 1440, min: 0 },
+            items: 1,
+            slidesToSlide: 1
+        },
+    };
+
+    const ButtonGroup = ({ next, previous }) => {
+        return (
+            <ArrowWrapper>
+                <LeftArrow onClick={() => previous()}>
+                    <BsArrowLeft
+                        style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%,-50%)'
+                        }}
+                    />
+
+                </LeftArrow>
+                <RightArrow onClick={() => next()}>
+                    <BsArrowRight
+                        style={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            transform: 'translate(-50%,-50%)'
+                        }}
+                    />
+                </RightArrow>
+            </ArrowWrapper >
+        )
+    };
     return (
         <>
             <SectionWorkshopsWrapper>
@@ -46,40 +90,30 @@ const SectionWorkshops = ({
                     <LeftWrapper>
                         <InfoNumber>{infoNumber}</InfoNumber>
                         <InfoText>{infoText}</InfoText>
-                        <ArrowWrapper>
-                            <LeftArrow>
-                                <BsArrowLeft
-                                    style={{
-                                        position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%,-50%)'
-                                    }}
-                                />
-                            </LeftArrow>
-                            <RightArrow>
-                                <BsArrowRight
-                                    style={{
-                                        position: 'absolute',
-                                        top: '50%',
-                                        left: '50%',
-                                        transform: 'translate(-50%,-50%)'
-                                    }}
-                                />
-                            </RightArrow>
-                        </ArrowWrapper>
                     </LeftWrapper>
                     <Grid>
-                        {workshopsMock.map(workshops => (
-                            <ImageCards
-                                key={workshops.id}
-                                imageUrl={workshops.imgUrl}
-                                imageAlt={workshops.imgAlt}
-                                description={workshops.name}
-                                name={workshops.description}
-                                background="red"
-                            />
-                        ))}
+                        <CarouselWrapper>
+                            <Carousel
+                                arrows={false}
+                                infinite={false}
+                                responsive={responsive}
+                                renderButtonGroupOutside={true}
+                                customButtonGroup={<ButtonGroup />}
+                            >
+                                {
+                                    workshopsMock.map(workshops => (
+                                        <ImageCards
+                                            key={workshops.id}
+                                            imageUrl={workshops.imgUrl}
+                                            imageAlt={workshops.imgAlt}
+                                            description={workshops.name}
+                                            name={workshops.description}
+                                            background="red"
+                                        />
+                                    ))
+                                }
+                            </Carousel>
+                        </CarouselWrapper>
                     </Grid>
                 </Content>
                 <SectionFooter>

@@ -18,7 +18,7 @@ export const introMock = [
         id: 1,
         itemTitle: 'PD',
         itemSubtitle: 'Product Design',
-        itemText: 'Find out the latest trends and buzz for experience research'
+        itemText: 'Find out the latest trends and buzz for product design'
     },
     {
         id: 2,
@@ -28,15 +28,15 @@ export const introMock = [
     },
     {
         id: 3,
-        itemTitle: 'PD',
+        itemTitle: 'FD',
         itemSubtitle: 'Frontend development',
-        itemText: 'Find out the latest trends and buzz for experience research'
+        itemText: 'Find out the latest trends for frontend development'
     },
     {
         id: 4,
         itemTitle: 'MD',
         itemSubtitle: 'Mobile development',
-        itemText: 'Find out the latest trends and buzz for experience research'
+        itemText: 'Find out the latest trends and buzz for mobile development'
     }
 ];
 
@@ -122,6 +122,48 @@ export const workshopsMock = [
     },
     {
         id: 3,
+        imgUrl: image6,
+        altUrl: 'image 6',
+        description: 'React Native in Practice',
+        name: 'Held by Ricardo Čerljenko'
+    },
+    {
+        id: 4,
+        imgUrl: image4,
+        altUrl: 'image 4',
+        description: 'CSS Performance',
+        name: 'Held by Harry Roberts'
+    },
+    {
+        id: 5,
+        imgUrl: image5,
+        altUrl: 'image 5',
+        description: 'Design Process',
+        name: 'Held by Elena Crković'
+    },
+    {
+        id: 6,
+        imgUrl: image6,
+        altUrl: 'image 6',
+        description: 'React Native in Practice',
+        name: 'Held by Ricardo Čerljenko'
+    },
+    {
+        id: 7,
+        imgUrl: image4,
+        altUrl: 'image 4',
+        description: 'CSS Performance',
+        name: 'Held by Harry Roberts'
+    },
+    {
+        id: 8,
+        imgUrl: image5,
+        altUrl: 'image 5',
+        description: 'Design Process',
+        name: 'Held by Elena Crković'
+    },
+    {
+        id: 9,
         imgUrl: image6,
         altUrl: 'image 6',
         description: 'React Native in Practice',

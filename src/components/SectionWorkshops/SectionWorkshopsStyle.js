@@ -92,10 +92,13 @@ export const InfoText = styled.p`
 
 export const ArrowWrapper = styled.div`
     display: none;
+    position: absolute;
     @media  screen and (${breakpoints.desktop}) {
         display: block;
         display: flex;
         margin-top: 255.8px;
+        left: 60px;
+        top: 180px;
     }
 `;
 
@@ -107,6 +110,9 @@ export const LeftArrow = styled.div`
         height: 41.6px;
         border-radius: 22.4px;
         margin-right: 15px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 `;
 
@@ -117,6 +123,9 @@ export const RightArrow = styled.div`
         width: 42.4px;
         height: 41.6px;
         border-radius: 22.4px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 `;
 
@@ -153,7 +162,7 @@ export const Text = styled.p`
     font-family: 'Haas Grot Disp';
     font-size: 20px;
     line-height: 28px;
-    margin-right: 16px;
+    margin-right: 24px;
     @media  screen and (${breakpoints.desktop}) {
         font-size: 19px;
         line-height: 22px;
@@ -174,4 +183,9 @@ export const Arrow = styled.div`
         border-radius: 22.4px;
     }
 `;
+
+export const CarouselWrapper = styled.div`
+        width: 960px;
+`;
+
 
