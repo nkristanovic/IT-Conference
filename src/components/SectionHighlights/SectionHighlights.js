@@ -1,7 +1,8 @@
+import React from 'react';
+import { useSpring } from 'react-spring';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
-import image1 from '../../assets/images/image 1.png';
-import image2 from '../../assets/images/image 2.png';
-import image3 from '../../assets/images/image 3.png';
+import { highlightsMock } from '../../lib/mock/section';
+
 import {
     SectionHighlights as SectionHighlightsWrapper,
     SectionHeader,
@@ -15,24 +16,38 @@ import {
     LeftWrapper,
     InfoNumber,
     InfoText,
-    ImageWrapper,
+    CardWrapper,
     ArrowWrapper,
     LeftArrow,
     RightArrow,
     Name,
-    Description
+    Description,
+    ImageWrapper
 } from './SectionHighlightsStyle';
 
-const SectionHighlights = ({
+const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1]
+const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
 
+const SectionHighlights = ({
+    title,
+    text,
+    infoNumber,
+    infoText,
+    imageUrl,
+    imageAlt,
+    name,
+    description
 }) => {
+
+    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 20, tension: 200, friction: 50 } }));
+
     return (
         <>
             <SectionHighlightsWrapper>
                 <SectionHeader>
-                    <Title>Conference highlights</Title>
+                    <Title>{title}</Title>
                     <ButtonWrapper>
-                        <Text>View schedule</Text>
+                        <Text>{text}</Text>
                         <Arrow>
                             <BsArrowRight
                                 style={{
@@ -47,8 +62,8 @@ const SectionHighlights = ({
                 </SectionHeader>
                 <Content>
                     <LeftWrapper>
-                        <InfoNumber>22</InfoNumber>
-                        <InfoText>Speakers</InfoText>
+                        <InfoNumber>{infoNumber}</InfoNumber>
+                        <InfoText>{infoText}</InfoText>
                         <ArrowWrapper>
                             <LeftArrow>
                                 <BsArrowLeft
@@ -72,23 +87,19 @@ const SectionHighlights = ({
                             </RightArrow>
                         </ArrowWrapper>
                     </LeftWrapper>
-                    <ImageWrapper>
+                    <CardWrapper>
                         <Figure>
-                            <Image src={image3} alt='image 3' />
-                            <Name>Merlin Rebrović</Name>
-                            <Description>UX Design at Google</Description>
+                            <ImageWrapper onMouseMove={({ clientX: x, clientY: y }) => (set({ xys: calc(x, y) }))}
+                                onMouseLeave={() => set({ xys: [0, 0, 1] })}
+                                style={{
+                                    transform: props.xys.to(trans)
+                                }}>
+                                <Image src={imageUrl} alt={imageAlt} />
+                            </ImageWrapper>
+                            <Name>{name}</Name>
+                            <Description>{description}</Description>
                         </Figure>
-                        <Figure>
-                            <Image src={image1} alt='image 1' />
-                            <Name>Magdalena Magličić</Name>
-                            <Description>Web and mobile developer at FIVE</Description>
-                        </Figure>
-                        <Figure>
-                            <Image src={image2} alt='image 2' />
-                            <Name>Kene Udeze</Name>
-                            <Description>UX Designer at Booking.com</Description>
-                        </Figure>
-                    </ImageWrapper>
+                    </CardWrapper>
                 </Content>
             </SectionHighlightsWrapper>
         </>

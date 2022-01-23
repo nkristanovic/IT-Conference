@@ -1,11 +1,14 @@
-import React from 'react';
 import styled from 'styled-components';
+import { animated } from 'react-spring';
 import { colors, breakpoints } from '../../lib/style/theme';
 
 export const SectionHighlights = styled.div`
     color: ${colors.white};
-    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 360px;
+    padding-left: 20px;
     @media  screen and (${breakpoints.desktop}) {
+        max-width: 1440px;
         padding: 0 60px;
     }
 `;
@@ -18,7 +21,6 @@ export const SectionHeader = styled.div`
         justify-content: space-between;
     }
 `;
-
 
 export const Title = styled.h2`
     font-family: 'Everett';
@@ -52,7 +54,6 @@ export const Text = styled.p`
     }
 `;
 
-
 export const Arrow = styled.div`
     background: ${colors.orange};
     color: ${colors.black};
@@ -66,7 +67,6 @@ export const Arrow = styled.div`
         border-radius: 22.4px;
     }
 `;
-
 
 export const Content = styled.div`
     margin-top: 64px;
@@ -132,13 +132,13 @@ export const RightArrow = styled.div`
     }
 `;
 
-export const ImageWrapper = styled.div`
+export const CardWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 16px;
     font-family: 'Haas Grot Disp';
-    overflow: auto;
     margin-top: 20px;
+    overflow: auto;
     @media  screen and (${breakpoints.desktop}) {
         grid-gap: 30px;
         overflow: hidden;
@@ -147,10 +147,19 @@ export const ImageWrapper = styled.div`
 
 export const Figure = styled.figure``;
 
+export const ImageWrapper = styled(animated.div)`
+    background-color: ${colors.blue};
+    height: 314px;
+    @media  screen and (${breakpoints.desktop}) {
+        height: 463px;
+    }
+`;
+
 export const Image = styled.img`
     width: 264px;
     height: 314px;
     object-fit: cover;
+    opacity: 0.6;
     @media  screen and (${breakpoints.desktop}) {
         width: 300px;
         height: 463px;
