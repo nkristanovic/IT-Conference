@@ -6,7 +6,7 @@ import { colors, breakpoints } from '../../lib/style/theme';
 export const CardWrapper = styled.div`
     font-family: 'Haas Grot Disp';
     margin-top: 20px;
-    margin-left: -10px;
+    margin-left: -5px;
     @media  screen and (${breakpoints.desktop}) {
         margin-left: 20px;
     }
