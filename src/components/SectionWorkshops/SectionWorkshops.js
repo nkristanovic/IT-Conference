@@ -1,3 +1,4 @@
+import React from 'react';
 import { BsArrowRight, BsArrowLeft } from 'react-icons/bs';
 import image4 from '../../assets/images/image 4.png';
 import image5 from '../../assets/images/image 5.png';

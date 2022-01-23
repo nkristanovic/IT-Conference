@@ -1,7 +1,7 @@
 import './App.scss';
 import SectionIntro from './components/SectionIntro/SectionIntro';
 import SectionHighlights from './components/SectionHighlights/SectionHighlights';
-import { highlightsMock, introSectionMock } from './lib/mock/section';
+import { highlightsSectionMock, introSectionMock } from './lib/mock/section';
 
 function App() {
   return (
@@ -13,7 +13,15 @@ function App() {
           description={section.description}
         />
       ))}
-      <SectionHighlights />
+      {highlightsSectionMock.map(highlights => (
+        <SectionHighlights
+          key={highlights.id}
+          title={highlights.title}
+          text={highlights.text}
+          infoNumber={highlights.infoNumber}
+          infoText={highlights.infoText}
+        />
+      ))}
     </>
   );
 }
